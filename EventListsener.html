@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Script</title>
+    <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+      #title{
+      background-color: yellow;
+      font-style: italic;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      #h4{
+        font-family: Arial, Helvetica, sans-serif;
+       
+        width: 150px;
+      }
+      #theme{
+        position: absolute;
+        right: 10px;
+        top:45px;
+        border-radius: 5px;
+        height: 30px;
+      }
+     
+      .videodiv:not(.icons){
+        display: flex;
+        overflow-x: scroll;
+        border:  black solid;
+        margin-left:250px ;
+        width: 400px;
+        
+       
+      }
+      .videodiv::-webkit-scrollbar{
+        display: none;
+      }
+      #video{
+        
+        margin: 10px 36px 0;
+        border-radius: 5px;
+        height: 550px;
+       
+      }
+      .icons{
+       cursor: pointer;
+        
+      }
+      .icons span{
+        padding: 30px 0;
+        
+      
+      }
+      .chat{
+        border: solid black 0.;
+        color: aliceblue;
+        width: 276px;
+        height: 310px;
+        position: absolute;
+        top: 428px;
+        left: 295px;
+        background-color: rgba(73, 67, 67, 0.856);
+        display: none;
+      }
+      .Activechat{
+        display: block;
+        
+      }
+      .chat h5{
+        border: solid black;
+      }
+      .like,.dislike,.cmts,.share{
+      }
+      .dislike{
+      
+      }
+      .cmts{
+
+      }
+      .share{
+        
+      }
+    </style>
+</head>
+<body>
+  <!-- Eventlistener 1 -->
+  <h4 id="title">Eventlisteners</h4>
+    <p>Click Me </p>
+
+    <!-- Eventlistener 2-->
+    <div class="event2">
+    <select name="" id="option" cl> 
+      <option value="">--Choose a player--</option>
+      <option value="Dhoni">Dhoni</option>
+      <option value="kholi">kholi</option>
+      <option value="Rohit">Rohit</option>
+    </select>
+    <h4 id="h4"></h4>
+</div>
+<!-- Eventlistener 3-->
+<select name="" id="theme">
+  <option value="">Change Theme</option>
+  <option value="dark">dark</option>
+  <option value="light">light</option>
+</select>
+
+<!-- Eventlistener 4-->
+
+<h4 id="title">Shorts</h4>
+
+<div class="wrap">
+
+<div class="box">
+  
+  <!-- Video 1 -->
+  
+  <div class="videodiv">
+    <div class="chat">
+      <h5>User 1</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <h5>User 2</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <h5>User 3</h5>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    
+ <video autoplay muted id="video">
+<source src="vid.mp4" type="video/mp4">
+ </video>
+ <div class="icons">
+  <span class="material-symbols-outlined like" id="like">
+    thumb_up
+    </span>
+    <span class="material-symbols-outlined dislike" id="dislike">
+      thumb_down
+      </span>
+      <span class="material-symbols-outlined cmts" id="comment">
+        chat
+        </span>
+    
+        <span class="material-symbols-outlined share" id="share">
+          share
+          </span> 
+ </div>
+
+ <!-- Video 2 -->
+ <video autoplay muted id="video">
+  <source src="vid.mp4" type="video/mp4">
+   </video>
+   <!-- Video 3 -->
+   <video autoplay muted id="video">
+    <source src="vid.mp4" type="video/mp4">
+     </video>
+     <!-- Video 4 -->
+     <video autoplay muted id="video">
+      <source src="vid.mp4" type="video/mp4">
+       </video>
+       <!-- Video 5 -->
+       <video autoplay muted id="video">
+        <source src="vid.mp4" type="video/mp4">
+         </video>
+         <!-- Video 6 -->
+         <video autoplay muted id="video">
+          <source src="vid.mp4" type="video/mp4">
+           </video>
+
+           
+
+          
+</div>
+</div>
+
+</div>
+
+
+
+<!-- Onclick -->
+    <h4 id="title">Onclick</h4>
+    <button onclick="CreateParaph()">create</button>
+    <script>
+
+
+// Declaring Variables
+
+  const element=document.querySelector('p');
+  const select=document.getElementById('h4');
+  const option=document.getElementById('option');
+  const theme=document.getElementById('theme');
+  const html=document.querySelector('html');
+  const btn=document.getElementById('btn');
+// Eventlisteners
+  element.addEventListener('click',updateName);
+  option.addEventListener('change',conditionStatement);
+ 
+ //Functions
+
+ function updateName(){
+  const name=prompt("whats your Name?");
+  element.textContent="Hi "+name;
+  }
+
+  function CreateParaph(){
+   const para=document.createElement('p');
+    para.textContent="Hi kural";
+    document.body.appendChild(para);
+ }
+
+ function conditionStatement(){
+  const choice=option.value;
+  console.log(choice);
+  if (choice==='Dhoni'){
+    select.textContent="Mahendra Singh Dhoni is an Indian former international cricketer who was captain of the Indian national cricket team in limited-overs formats from 2007 to 2017 and in Test cricket from 2008 to 2014 and the current captain of CSK. He led India to victory in three ICC trophies, the most by any Indian captain.";
+  }
+else if(choice==='kholi'){
+  select.textContent="Virat Kohli born 5 November 1988 is an Indian international cricketer and former captain of the India national cricket team. Widely regarded as one of the greatest batsmen of all time, Kohli plays as a right-handed batsman for Royal Challengers Bangalore in the Indian Premier League and for Delhi in domestic cricket. With 40 wins out of 68 tests, Kohli is India's most successful test captain, and one of the most successful test captains of all time, behind only Graeme Smith, Ricky Ponting and Steve Waugh.";
+}
+else if(choice==='Rohit'){
+  select.textContent="Rohit Gurunath Sharma is an Indian international cricketer and the current captain of the Indian cricket team. Widely considered as one of the best opening batter, he plays as a right-handed batsman for Mumbai Indians in IPL and for Mumbai in domestic cricket. ";
+}
+ }
+
+//Event listenser (Change Theme)
+ function changeTheme(dark,light){
+ html.style.backgroundColor=dark;
+ html.style.color=light;
+ }
+ theme.addEventListener('change',()=>theme.value==='dark'
+ ? changeTheme('black','white')
+ : changeTheme('white','black'));
+
+// Shorts
+
+let like=document.getElementById('like');
+let dislike=document.getElementById('dislike');
+like.addEventListener('click',()=>{
+  like.style.color=('blue');
+});
+dislike.addEventListener('click',()=>{
+  dislike.style.color=('#ccc');
+});
+share.addEventListener('click',()=>{
+  alert("URL Copied");
+});
+comment.addEventListener('click',()=>{
+ comment.classList.toggle('Activechat');
+});
+    </script>
+</body>
+</html>
