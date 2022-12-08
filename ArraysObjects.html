@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays/Loops</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .title{
+            background-color: yellow;
+        }
+       .box{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border: solid black;
+        height: 250px;
+        width: 300px;
+       } 
+       .box input{
+        position: relative;
+        top: 20px;
+        justify-content: center;
+        align-items: center;
+        height: 20px;
+       }
+       .box button{
+        position: relative;
+        top: 30px;
+       }
+
+       .historydiv{
+        border:0.1px solid #ccc;
+        width: auto;
+        
+        background-color: rgb(238, 238, 238);
+       }
+      
+    </style>
+</head>
+<body>
+  
+    
+
+<h4 class="title">Array[Object] Implementaion</h4>
+
+<div class="box">
+    <h4>Search a contact </h4>
+<input type="text" id="find" onkeyup="search()">
+<div class="contactdiv">
+<h5 id="contact"></h5>
+</div>
+</div>
+<br> <br>
+<div class="historybox">
+    <h4>Search </h4>
+<input type="text" id="lastsearch" onkeyup="check()">
+<button onclick="history()">Search</button>
+<div class="historydiv">
+<h5 id="history"></h5>
+</div>
+</div>
+
+    <script>
+   
+    
+    // Array chaining Methods  
+    //chocolates array has 3 unsorted objects 
+let chocolates=[
+    {name:"Dairy Milk",cost:700},
+    {name:"Kitkat",cost:490},
+    {name:"Snickers",cost:60}
+];
+
+
+// We are going to sort By Price of each chocolates by using SORT-(Array MEthod)
+let sortByLowestPrice=chocolates.sort(function(a,b){
+    return a.cost-b.cost
+});
+console.log(sortByLowestPrice); //TO check the output
+
+// After sorting the array by its cost we're next going to Use FILTER-(Array Method) to filter the chocolates which is more than 100rs
+let filtered=sortByLowestPrice.filter((a)=>{
+    return a.cost>100
+
+});
+console.log(filtered);//To check the output
+
+//Finally to iterate over the array and align the output we expected,We're using Map-(Array Methid)
+let finalOutput=filtered.map((a)=>{
+    return a.name +" - $"+a.cost;
+
+})
+console.log(finalOutput);//To check thwe output
+
+
+
+// To find a contact using name just like a phonebook
+let contactdiv=document.getElementById('contact');
+function search(){
+let find=document.getElementById('find').value; //Saving the input in a separate variable
+//Array of objects containing user information
+let arr=[{name:'kural',mob:9080724529},{name:"Appa",mob:9790223495},{name:"Amma",mob:9944052998},{name:"moni",mob:9003759065}];
+//Using find method to iterate over each element in arr and get the first output
+let res=arr.find((a)=>{
+    return a.name==find.toString();
+})
+if (res){
+contactdiv.innerHTML=("Mobile number: "+res.mob);
+} //Final output
+else{
+    contactdiv.innerHTML=("No Results for "+ find); 
+}
+}
+
+
+//Search history using local storage
+
+function history(){
+    let historydiv=document.getElementById('lastsearch').value;
+    let history=document.getElementById('history');
+    arr=[historydiv.toString()];
+    for(let i=0;i<=arr.length;i++){
+        localStorage.setItem("search",arr);
+        console.log(localStorage.getItem('search'));//Storing the value in local
+    }
+  
+}
+function check(){
+    let historydiv=document.getElementById('lastsearch').value;
+    let history=document.getElementById('history');
+    if(historydiv.toString()==localStorage.getItem('search')){
+        console.log("yes");
+        history.innerHTML=(localStorage.getItem('search'));//Retriving the valuefrom local storage
+    }
+    else{
+        console.log("no");
+    }
+}
+
+
+
+    </script>
+<script src="Objects.js"></script>
+</body>
+</html>
