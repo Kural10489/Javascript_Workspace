@@ -7,5 +7,5 @@ console.log(msg,name);
 greet(); //optional parameters
 
 function ruban(){
-
+console.log('');
 }
