@@ -6,7 +6,6 @@ const Employee=[{name:'kural', role:'Angulardev'},
 // Function Written to fetch data from the array of objects and potray in HTML         
 const getEmployeedetails=()=>{
   let output="";
-  let index='';
   setTimeout(()=>{
 Employee.forEach((item)=>{
 output=output+`<li>${item.name}</li>`;
