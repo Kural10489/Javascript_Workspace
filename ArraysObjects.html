@@ -148,6 +148,15 @@ const map=arr.map((a)=>a*2)
 console.log(map,arr.reduce((a,b)=>{return a+b}));
 
 
+//For each to remove duplicate
+arr=[1,2,2,1,]; 
+res=[];
+arr.forEach((cur,index) => {
+if(arr.indexOf(cur)==index)
+    res.push(cur);
+else{console.log('no');}
+}); console.log(res);
+
 //Create Object
 const objectOne={
     name:"Objname-1",

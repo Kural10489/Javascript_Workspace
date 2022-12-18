@@ -16,9 +16,11 @@ let spiderman={
     spiderman.avengerIntro();
 console.log(spiderman["super-power"]);
 
+
 function intro(){
     console.log(this.name)
 }
+
 function obj (name,age){
     this.name=name
     this.age=age
@@ -38,9 +40,9 @@ function create(name){
     }};
 }
 let kural=create('kural');
-let moni=create('moni');
+let Person2=create('Person2');
 console.log(kural.greet());
-console.log(moni.greet());
+console.log(Person2.greet());
 
 
 let object={

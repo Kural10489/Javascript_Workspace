@@ -6,7 +6,7 @@ class Employee{
     }
 }
 employee1=new Employee('kural',9080724529,22);
-employee2=new Employee('kural',9080724529,22);
+employee2=new Employee('kural',9080724529,23);
 employee3=new Employee('kural',9080724529,22);
 
-console.log(employee1.age);
+console.log(employee1.age,employee2.age);

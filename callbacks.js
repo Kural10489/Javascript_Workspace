@@ -1,6 +1,6 @@
 //Array Object
 const Employee=[{name:'kural', role:'Angulardev'},
-          {name:'moni',role:'Reactdev'}]
+          {name:'Person2',role:'Reactdev'}]
 
 
 // Function Written to fetch data from the array of objects and potray in HTML         
@@ -21,5 +21,5 @@ const setEmployeedetails=(employee,callback)=>{
   callback();
   },2000);
 }
-setEmployeedetails({name:"ruban",role:"webdev"},getEmployeedetails);
+setEmployeedetails({name:"Person3",role:"webdev"},getEmployeedetails);
 

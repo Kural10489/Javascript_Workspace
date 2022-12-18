@@ -1,6 +1,6 @@
 //Array Object
 const Employee=[{name:'kural', role:'Angulardev'},
-          {name:'moni',role:'Reactdev'}];
+          {name:'Person2',role:'Reactdev'}];
 
 
           
